@@ -1,6 +1,5 @@
-## First Name Last Name
-
-### Term Year 
+## Shyla Alessandro
+### 2022
 
 DSBA student at [Florida Polytechnic University](https://www.floridapoly.edu) currently enrolled in: 
 
