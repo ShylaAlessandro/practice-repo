@@ -1,0 +1,295 @@
+---
+title: "Introduction to Data Science - HW 3"
+author: "Shyla Alessandro- `salessandro4217@floridapoly.edu`"
+output:
+  html_document:
+    df_print: paged
+---
+
+
+
+# Problem 1 
+
+Create the following vectors in `R` (see the pattern and use appropriate functions to construct these vectors):
+
+$a = (5, 10, 15, 20, ..., 160)$
+```{r}
+
+#a
+vector_1 <- seq(5, 160, 5)
+print(vector_1)
+
+```
+
+$b = (87, 86, 85, ..., 56)$
+
+```{r}
+
+#b
+vector_2 <- seq(87, 56, -1)
+print(vector_2)
+
+```
+
+(a) (5 points) Multiply these vectors and call the result `d`. 
+
+```{r}
+
+#a
+d = vector_1 * vector_2
+print(d)
+
+```
+(b) (5 points) What are the 19th, 20th, and 21st elements of `d`?
+
+```{r}
+
+#b
+d[19]
+d[20]
+d[21]
+
+```
+
+(c) (5 points) What are all of the elements of `d` which are less than 2000?
+
+```{r}
+
+#c
+
+less_than = d < 2000
+print(less_than)
+
+
+```
+
+(d) (5 points) How many elements of `d` are greater than 6000?
+
+```{r}
+elements = d > 6000
+print(elements)
+```
+# Problem 2
+
+Start with this vector of `nouns`.  
+
+```{r}
+nouns <- c("apple", "flower", "insect", "lettuce", "knife", "dog", "cloud", "person", "cabinet", "flower" )
+```
+
+(a) (5 points) Use the `length()` function to display the number of elements in `nouns`.
+
+
+```{r}
+
+#a
+nouns <- c("apple", "flower", "insect", "lettuce", "knife", "dog", "cloud", "person", "cabinet", "flower" )
+length(nouns)
+
+```
+
+(b) (5 points) Use indexing to create a new vector consisting of the first 4 elements of `nouns`.
+
+```{r}
+
+#b
+nouns <- c("apple", "flower", "insect", "lettuce", "knife", "dog", "cloud", "person", "cabinet", "flower" )
+first_elements <- nouns[1:4]
+print(first_elements)
+
+```
+
+(c) (5 points) Use indexing to create a new vector consisting of only the last 8 elements of `nouns`.
+
+```{r}
+
+nouns <- c("apple", "flower", "insect", "lettuce", "knife", "dog", "cloud", "person", "cabinet", "flower" )
+last_elements <- nouns[3:10]
+print(last_elements)
+
+```
+(d) (5 points) Use indexing to create a new vector of the 1st, 3rd through 6th, and 10th elements of `nouns` (the length of the resulting vector should be 6)
+
+```{r}
+
+nouns <- c("apple", "flower", "insect", "lettuce", "knife", "dog", "cloud", "person", "cabinet", "flower" )
+component_1 <- nouns[1]
+component_2 <- nouns[3:6]
+component_3 <- nouns[10]
+random_selection <- c(component_1, component_2, component_3)
+print(random_selection)
+
+```
+# Problem 3
+
+(a) (5 points) Create a vector `my_breakfast` of everything you ate for breakfast
+
+```{r}
+
+my_breakfast <- c("tater_tots","biscuit_and_gravy", "turkey_bacon", "lemonade" )
+print(my_breakfast)
+
+```
+(b) (5 points) Create a vector `my_lunch` of everything you ate (or will eat) for lunch
+
+```{r}
+
+my_lunch <- c("veggies", "chicken", "lentils" )
+print(my_lunch)
+
+```
+(c) (5 points) Create a list `meals` that has contains your breakfast and lunch
+
+```{r}
+
+my_breakfast <- c("tater_tots","biscuit_and_gravy", "turkey_bacon", "lemonade" )
+my_lunch <- c("veggies", "chicken", "lentils" )
+meals <- list(
+  my_breakfast,
+  my_lunch
+  )
+print(meals)
+```
+(d) (5 points) Add a "dinner" element to your `meals` list that has what you plan to eat for dinner
+
+```{r}
+
+my_breakfast <- c("tater_tots","biscuit_and_gravy", "turkey_bacon", "lemonade" )
+my_lunch <- c("veggies", "chicken", "lentils" )
+my_dinner <- c("protein_shake", "egg_whites" )
+meals <- list(
+  my_breakfast,
+  my_lunch,
+  my_dinner
+  )
+print(meals)
+
+```
+
+(e) (5 points) Use dollar notation to extract your `dinner` element from your list and save it in a vector called 'dinner'
+
+```{r}
+
+my_breakfast <- c("tater_tots","biscuit_and_gravy", "turkey_bacon", "lemonade" )
+my_lunch <- c("veggies", "chicken", "lentils" )
+my_dinner <- c("protein_shake", "egg_whites" )
+meals <- list(
+  my_breakfast,
+  my_lunch,
+  my_dinner
+  )
+
+meals$my_dinner
+print(dinner)
+
+```
+
+
+(f) (5 points) Use double-bracket notation to extract your `lunch` element from your list and save it in your list as the element at index 5 (no reason beyond practice)
+
+```{r}
+
+my_breakfast <- c("tater_tots","biscuit_and_gravy", "turkey_bacon", "lemonade" )
+my_lunch <- c("veggies", "chicken", "lentils" )
+my_dinner <- c("protein_shake", "egg_whites" )
+meals <- list(
+  my_breakfast,
+  my_lunch,
+  my_dinner
+  )
+
+meals[[5]] <- meals[[2]]
+print(meals[[5]])
+
+```
+
+# Problem 4
+
+(a) (5 points) Create a vector of the number of points the Chicago Bulls (NBA team) scored in the most recent 4 games of the season (Google "Chicago Bulls" for the scores!)
+
+```{r}
+
+points_scored <- c(100, 95, 81, 114 )
+print(points_scored)
+
+```
+
+(b) (5 points) Create a vector of the number of points the Bulls have allowed to be scored against them in each of the first 4 games of the season
+
+```{r}
+
+l_count <- c(116, 119, 111, 110 )
+print(l_count)
+```
+
+(c) (5 points) Combine your two vectors into a dataframe called `games`
+
+```{r}
+
+points_scored <- c(100, 95, 81, 114 )
+l_count <- c(116, 119, 111, 110 )
+games <- data.frame(points_scored, l_count)
+print(games)
+
+```
+
+(d) (5 points) Create a new column "diff" that is the difference in points between the teams. Hint: recall the syntax for assigning new elements (which in this case will be a vector) to a list!
+
+```{r}
+
+points_scored <- c(100, 95, 81, 114 )
+l_count <- c(116, 119, 111, 110 )
+diff <- abs(l_count - points_scored)
+games <- list(
+  points_scored,
+  l_count,
+  diff
+)
+
+new_chart <- data.frame(points_scored, l_count, diff )
+print(new_chart)
+
+```
+
+(e) (5 points) Create a new column "won" which is `TRUE` if the Bulls won the game.
+
+```{r}
+
+points_scored <- c(100, 95, 81, 114 )
+l_count <- c(116, 119, 111, 110 )
+diff <- abs(l_count - points_scored)
+won <- points_scored > l_count
+games <- list(
+  points_scored,
+  l_count,
+  diff,
+  won
+)
+
+new_chart <- data.frame(points_scored, l_count, diff, won )
+print(new_chart)
+
+```
+
+(f) (5 points) Create a vector of the opponent names corresponding to the games played and add it to your dataframe.
+
+```{r}
+
+points_scored <- c(100, 95, 81, 114 )
+l_count <- c(116, 119, 111, 110 )
+diff <- abs(l_count - points_scored)
+won <- points_scored > l_count
+opponent <- 'Bucks'
+games <- list(
+  points_scored,
+  l_count,
+  diff,
+  won,
+  opponent
+)
+
+new_chart <- data.frame(points_scored, l_count, diff, won, opponent )
+print(new_chart)
+  
+```
+
